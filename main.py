@@ -3,9 +3,7 @@ import datetime
 from converters import *
 from data import *
     
-def generate_draw(names, start_time, *both_tees):
-    if both_tees == None:
-        both_tees == False
+def generate_draw(names, start_time, both_tees):
         
     random.shuffle(names)
     draw = dict()
@@ -14,11 +12,14 @@ def generate_draw(names, start_time, *both_tees):
     if len(names) % 4 != 0:
         num_teams += 1
         
-    # initializing draw dictionary
-    initialize_dict(time_str_to_int(start_time), draw, num_teams)
-    
-    # assign teams to each time
-    assign_players(names, start_time, draw)
+    if both_tees:
+        pass
+    else:
+        # initializing draw dictionary
+        initialize_dict(time_str_to_int(start_time), draw, num_teams)
+        
+        # assign teams to each time
+        assign_players(names, start_time, draw)
             
     return draw
 
