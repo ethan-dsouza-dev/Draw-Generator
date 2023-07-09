@@ -1,22 +1,7 @@
 import random
 import datetime
 from converters import *
-
-names = ["R Dsouza", 
-         "J Dsouza", 
-         "RJ", 
-         "Arlington", 
-         "Anymore",
-         "E Dsouza",
-         "Dr Sibiya",
-         "BK", 
-         "Nkosinath",
-         "Juliet Farr",
-         "Lemogang",
-         "Russ",
-         "KK"] 
-
-
+from data import *
     
 def generate_draw(names, start_time):
     current_time = time_str_to_int(start_time)
