@@ -3,24 +3,26 @@ import datetime
 from converters import *
 from data import *
     
-def generate_draw(names, start_time):
-    current_time = time_str_to_int(start_time)
-    print(current_time)
+def generate_draw(names, start_time, *both_tees):
+    if both_tees == None:
+        both_tees == False
+        
     random.shuffle(names)
     draw = dict()
     
-    if len(names) % 4 == 0:
-        num_teams = int(len(names) / 4)
-    else:
-        num_teams = int(len(names) / 4) + 1
+    num_teams = int(len(names) / 4)
+    if len(names) % 4 != 0:
+        num_teams += 1
         
-    # initializing dictionary
-    for team in range(1, num_teams + 1):
-            draw[f'{current_time}'] = []
-            current_time += 10
-    print(draw)
+    # initializing draw dictionary
+    initialize_dict(time_str_to_int(start_time), draw, num_teams)
     
     # assign teams to each time
+    assign_players(names, start_time, draw)
+            
+    return draw
+
+def assign_players(names, start_time, draw):
     current_time = time_str_to_int(start_time)
     try:
         while len(names) != 0:    
@@ -30,8 +32,11 @@ def generate_draw(names, start_time):
             current_time = time_str_to_int(start_time)
     except IndexError as e:
         print("Ran out of players")
-        return draw
-            
-    return draw
 
-print(generate_draw(names, "11:00"))
+def initialize_dict(current_time, draw, num_teams):
+    for team in range(1, num_teams + 1):
+            draw[f'{current_time}'] = []
+            current_time += 10
+    print(draw)
+
+print(generate_draw(names, "11:00", False))
