@@ -42,4 +42,4 @@ def initialize_dict(start_time, num_teams):
             current_time += 10
     return draw
 
-print(generate_draw(names, "11:00", True))
+print(generate_draw(get_names(), "11:00", True))
