@@ -1,5 +1,4 @@
 import random
-import datetime
 from converters import *
 from data import *
     
@@ -42,4 +41,5 @@ def initialize_dict(start_time, num_teams):
             current_time += 10
     return draw
 
-print(generate_draw(get_names(), "11:00", True))
+if __name__ == "__main__":
+    dict_to_pdf(generate_draw(get_names(), "11:00", True))
