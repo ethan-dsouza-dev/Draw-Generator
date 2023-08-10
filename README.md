@@ -1,2 +1,2 @@
 # Draw-Generator
-An app that is generates a game draw for a golf club with automated data collection through online forms.
+An automation script that is generates a teams of four for golf tournaments with automated data collection through online forms.
