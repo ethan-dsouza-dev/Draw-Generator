@@ -1,2 +1,2 @@
 # Draw-Generator
-An automation script that generates a teams of four for golf tournaments with automated data collection through online forms.
+An automation script that generates teams of four for golf tournaments with automated data collection via GCloud forms.
