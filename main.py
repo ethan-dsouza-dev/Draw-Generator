@@ -1,7 +1,7 @@
 import random
 from converters import *
 from data import *
-import data as db
+import sheet
     
 def generate_draw(names, start_time, both_tees):
         
@@ -44,4 +44,4 @@ def initialize_dict(start_time, num_teams):
 
 if __name__ == "__main__":
     print("Starting Now")
-    dict_to_pdf(generate_draw(db.get_names(), "11:00", False))
+    dict_to_pdf(generate_draw(sheet.get_names(), "11:00", False))
