@@ -1,2 +1,2 @@
 # Draw-Generator
-An app that is generates a game draw for a golf club with automated data collection through online forms.
+Tournament Setup assistant that automates data collection through GCloud api and generation of teams of four for golf tournaments with automated data collection via GCloud forms. Produces a pdf with a series of tables representing teams.
