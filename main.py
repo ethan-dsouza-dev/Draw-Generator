@@ -39,9 +39,13 @@ def initialize_dict(start_time, num_teams):
     
     for team in range(1, num_teams + 1):
             draw[f'{current_time}'] = []
-            current_time += 10
+            if str(current_time + 10).endswith("60"):
+                current_time +=50
+            else:
+                current_time += 10
     return draw
 
 if __name__ == "__main__":
     print("Starting Now")
     dict_to_pdf(generate_draw(sheet.get_names(), "11:00", False))
+    print("Draw Generation completed")
